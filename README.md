@@ -1,1 +1,1 @@
-# nytimes-react
+# vegetarian-recipes-react
