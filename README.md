@@ -1,1 +1,0 @@
-# vegetarian-recipes-react

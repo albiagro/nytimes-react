@@ -1,0 +1,19 @@
+.card {
+  width: 80%;
+  margin: auto;
+}
+
+@media screen and (max-width: 500px) {
+  .card {
+    width: 100%;
+  }
+}
+
+.btnLoadMore {
+  width:20%;
+  margin:auto;
+}
+
+.navbar {
+  background-image: linear-gradient(to bottom, #0ba360 0%, #3cba92 100%);
+}
