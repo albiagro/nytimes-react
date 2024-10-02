@@ -10,9 +10,9 @@ function App() {
       <Router>
       <MyNavBar />
         <Routes>
-          <Route path="/" element={<Main />} />
+          <Route path="/" element={<Main query={''}/>} />
           <Route path="/recipe-instructions" element={<RecipeStepByStep />} />
-          <Route path="/feel-lucky" element={<Main />} />
+          <Route path="/feel-lucky" element={<Main query={''} />} />
         </Routes>
       </Router>
     </div>

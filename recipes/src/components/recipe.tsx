@@ -31,9 +31,9 @@ export const Recipe = (props: Props) => {
         });
   };
 
-  useEffect(() => {
-    getInformation();
-  }, []);
+  // useEffect(() => {
+  //   getInformation();
+  // }, []);
 
   const openRecipeInstruction = () => {
     navigate('/recipe-instructions', {state:{recipeId: recipe.id}})

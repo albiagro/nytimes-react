@@ -9,9 +9,18 @@
   }
 }
 
+.container {
+  text-align: center;
+  margin-top:2%;
+}
+
 .btnLoadMore {
-  width:20%;
-  margin:auto;
+  width:15%;
+}
+
+.links {
+  color: black;
+  text-decoration: inherit;
 }
 
 .navbar {
