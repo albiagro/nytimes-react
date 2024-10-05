@@ -51,6 +51,7 @@ export const RecipeStepByStep = () => {
 
   useEffect(() => {
     getInstructions();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

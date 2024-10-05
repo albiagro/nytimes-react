@@ -49,6 +49,7 @@ export const Main = () => {
 
   useEffect(() => {
     getRecipes();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [query, resultsNumber]);
 
   return (
