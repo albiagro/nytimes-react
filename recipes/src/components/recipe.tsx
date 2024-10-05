@@ -6,6 +6,7 @@ import { useNavigate} from 'react-router-dom';
 
 interface Props {
     recipe: IRecipe
+    idCard: string
 }
 
 interface RecipeDetails {
@@ -40,7 +41,7 @@ export const Recipe = (props: Props) => {
   }
 
     return (
-        <Card className= 'myCard'>
+        <Card className= 'myCard' id={props.idCard}>
       <Card.Img variant="top" src={recipe.image} />
       <Card.Body>
         <Card.Title>{recipe.title}</Card.Title>

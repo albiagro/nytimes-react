@@ -9,6 +9,11 @@
   }
 }
 
+#feel-lucky-card {
+  width: 30%;
+  margin: auto;
+}
+
 .container {
   text-align: center;
   margin-top:2%;

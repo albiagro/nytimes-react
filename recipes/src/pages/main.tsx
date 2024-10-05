@@ -1,10 +1,10 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Recipe } from "../components/recipe";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import { Button } from "react-bootstrap";
-import { useLocation } from "react-router-dom";
+import {AppContext} from "../App"
 
 export const myApiKey = process.env.REACT_APP_API_KEY;
 
@@ -14,19 +14,14 @@ export interface IRecipe {
   image: string;
 }
 
-interface Props {
-  query: string
-}
-
-export const Main = (props : Props) => {
-  var {query} = props
+export const Main = () => {
+ 
   const [recipesList, setRecipes] = useState<IRecipe[] | null>(null);
   const [resultsNumber, increaseResultsNumber] = useState(12)
-  const location = useLocation()
+  
   var url = `https://api.spoonacular.com/recipes/complexSearch?`
 
-  // console.log(location.state.query)
-   if(location.state !== null) query = location.state.query
+  const {query} = useContext(AppContext)
 
   if(query !== '') {
     url += `query=${query}`
@@ -56,14 +51,13 @@ export const Main = (props : Props) => {
     getRecipes();
   }, [query, resultsNumber]);
 
-
   return (
     <div>
       <Row xs={1} md={4} className="g-8">
         {recipesList?.map((recipe) => (
           <Col key={recipe.id}>
             <br />
-            <Recipe recipe={recipe} />
+            <Recipe recipe={recipe} idCard='' />
           </Col>
         ))}
       </Row>

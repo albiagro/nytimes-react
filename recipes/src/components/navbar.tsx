@@ -6,12 +6,14 @@ import Navbar from 'react-bootstrap/Navbar';
 import {Logo} from '../img/logo'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../App.css';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { AppContext } from '../App';
 
 export const MyNavBar = () => {
   const [search, setSearch] = useState('')
-  const [query, setQuery] = useState('')
+  
+  const {setQuery} = useContext(AppContext)
 
   const navigate = useNavigate()
 
@@ -23,7 +25,12 @@ export const MyNavBar = () => {
     e.preventDefault()
     setQuery(search)
     
-    navigate('/', {state: {query: query}})
+    navigate('/')
+  }
+
+  const resetSearch = () => {
+    setSearch('')
+    setQuery(search)
   }
 
   return (
@@ -38,12 +45,13 @@ export const MyNavBar = () => {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Nav.Link><Link to= '/' ><p className= 'links'> Home </p ></Link></Nav.Link>
+            <Nav.Link><Link onClick= {resetSearch} to= '/' ><p className= 'links'> Home </p ></Link></Nav.Link>
             <Nav.Link><Link to= '/feel-lucky' ><p className= 'links'> I feel lucky </p ></Link></Nav.Link>
           </Nav>
           <Form onSubmit= {getSearch} className="d-flex">
             <Form.Control
-              type="search"
+              type="input"
+              value={search}
               placeholder="Search"
               className="me-2"
               aria-label="Search"
