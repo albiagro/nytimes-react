@@ -28,6 +28,7 @@ export const FeelLucky = () => {
 
   useEffect(() => {
     getRecipe();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [click]);
 
   return (
