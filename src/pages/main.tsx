@@ -8,6 +8,8 @@ import {AppContext} from "../App"
 
 export const myApiKey = process.env.REACT_APP_API_KEY;
 
+console.log(myApiKey)
+
 export interface IRecipe {
   id: number;
   title: string;
