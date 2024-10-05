@@ -32,10 +32,10 @@ export const Recipe = (props: Props) => {
         });
   };
 
-  useEffect(() => {
-    getInformation();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  // useEffect(() => {
+  //   getInformation();
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, []);
 
   const openRecipeInstruction = () => {
     navigate('/recipe-instructions', {state:{recipeId: recipe.id}})

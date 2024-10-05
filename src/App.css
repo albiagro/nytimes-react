@@ -7,6 +7,14 @@
   .card {
     width: 100%;
   }
+
+  .btnLoadMore {
+    width:50%;
+  }
+
+  #feel-lucky-card {
+    width: 100%;
+  }
 }
 
 #feel-lucky-card {
