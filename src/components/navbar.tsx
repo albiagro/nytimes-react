@@ -6,16 +6,13 @@ import Navbar from 'react-bootstrap/Navbar';
 import {Logo} from '../img/logo'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../App.css';
-import { useContext, useEffect, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useContext, useState } from 'react';
 import { AppContext } from '../App';
 
 export const MyNavBar = () => {
   const [search, setSearch] = useState('')
   
-  const {query, setQuery} = useContext(AppContext)
-
-  const navigate = useNavigate()
+  const {setQuery} = useContext(AppContext)
 
   const updateSearch = (e : any) => {
     setSearch(e.target.value)
@@ -24,19 +21,12 @@ export const MyNavBar = () => {
   const getSearch = (e : any) => {
     e.preventDefault()
     setQuery(search)
-    
-    navigate('/')
   }
 
   const resetSearch = () => {
     setSearch('')
     setQuery(search)
   }
-
-  useEffect(() => {
-    navigate('/')
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [query]);
 
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
@@ -50,7 +40,7 @@ export const MyNavBar = () => {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Nav.Link onClick= {resetSearch}><p className= 'links'> Home </p ></Nav.Link>
+            <Nav.Link href='/' onClick= {resetSearch}><p className= 'links'> Home </p ></Nav.Link>
             <Nav.Link href="/feel-lucky"><p className= 'links'> I feel lucky </p ></Nav.Link>
           </Nav>
           <Form onSubmit= {getSearch} className="d-flex">
