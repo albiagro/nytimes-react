@@ -20,9 +20,10 @@ No prerequisites needed.
 
 ### Executing program
 
-* At start, the first 10 recipes will be displayed
-* By clicking "Show more" button, 10 more recipes will be displayed
+* At start, the first 12 recipes will be displayed
+* By clicking "Show more" button, 12 more recipes will be displayed
 * By using the search bar it's possible to get the desired recipes
+* For each recipe shown, it's possibile to get its steps by clicking "Let's start"
 * Through the page "I feel lucky" it's possible to get a random vegetarian dessert
 
 ## Help
