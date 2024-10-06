@@ -39,6 +39,8 @@ Alberto Agrò (https://albiagro.github.io/)
 
 ## Version History
 
+* 0.4
+    * Fixing
 * 0.3
     * Creation of Readme file
 * 0.2
