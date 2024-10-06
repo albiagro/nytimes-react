@@ -19,15 +19,12 @@ export const Main = () => {
   const [recipesList, setRecipes] = useState<IRecipe[] | null>(null);
   const [resultsNumber, increaseResultsNumber] = useState(12)
   
-  var url = `https://api.spoonacular.com/recipes/complexSearch?`
+  var url = `https://api.spoonacular.com/recipes/complexSearch?diet=vegetarian`
 
   const {query} = useContext(AppContext)
 
   if(query !== '') {
-    url += `query=${query}`
-  }
-  else {
-    url+= `diet=vegetarian`
+    url += `&query=${query}`
   }
 
   url+= `&number=${resultsNumber}&apiKey=${myApiKey}`
